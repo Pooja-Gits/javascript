@@ -1,26 +1,20 @@
-const pi = 22 / 7;
-//pi = 22 / 7 * 1; //not Allowed
-console.log(pi);
+const employee = {
+    name: "Manoj",
+    jobTitle: "Developer",
+    location: "India",
+    technology: ["C#", "JavaScript", "Scala", "TypeScript", "SQL"]
+};
 
-const someArray = [1, 2, 3, 6, 7];
-console.log(someArray);
-someArray.splice(3, 0, 5, 4);
-console.log(someArray);
-someArray.reverse();
-console.log(someArray);
-someArray.sort();
-console.log(someArray);
-//someArray = someArray.slice(); // Not Allowed
-
-let ticTak = [
-    ["X", "O", " "],
-    ["O", "X", "O"],
-    [" ", " ", "O"]
-];
-
-console.log("Board");
-console.log("----------");
-for (let i = 0; i < ticTak.length; i++) {
-    console.log(ticTak[i].join(" | "));
-}
-console.log("----------");
+console.log(employee.name);
+console.log(employee["jobTitle"]);
+let locationVar = "location";
+console.log(employee[locationVar]);
+console.log(employee.technology[2]);
+console.log(employee.location);
+employee.technology[5] = "Java";
+console.log(employee.technology);
+employee.state = "Telengana";
+console.log(employee);
+employee["kar kor 99"] = 999;
+console.log(employee);
+console.log(employee["kar kor 99"]);
