@@ -1,22 +1,28 @@
-const item = ["milk", "butter", "apple", "black"]
-const combine = ["can", "milk", "pie", "berry"]
-
-for (let i = 0; i < item.length; i++) {
-    console.log(`${item[i]} ${combine[i]}`);
+function pickCard() {
+    const arrCards = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"]
+    const suit = ["Diamonds", "Spades", "Hearts", "Clubs"]
+    const randCard = getRandomNumber(arrCards.length);
+    const randSuit = getRandomNumber(suit.length);
+    return {
+        value: arrCards[randCard],
+        suit: suit[randSuit]
+    };
 }
 
-function add(x, y) {
-    return x + y;
+function getRandomNumber(n) {
+    return Math.floor(Math.random() * n);
 }
 
-function isPerfectSquare(num) {
-    let sqrtVal = Math.sqrt(num);
-    if (sqrtVal * sqrtVal === num) {
-        return true;
-    }
-    return false;
+function pickCard() {
+    const arrCards = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"]
+    const suit = ["Diamonds", "Spades", "Hearts", "Clubs"]
+    return {
+        value: getRandom(arrCards),
+        suit: getRandom(suit)
+    };
 }
 
-function isPerfectSquareSrt(n) {
-    return Math.sqrt(n) * Math.sqrt(n) === n;
+function getRandom(arrCards) {
+    const rand = Math.floor(Math.random() * arrCards.length);
+    return arrCards[rand];
 }
