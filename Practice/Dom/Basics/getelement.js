@@ -19,3 +19,17 @@ const arrSpecialLi = [...li];
 for (let a in arrSpecialLi) {
     console.log(a);
 }
+
+//Query Selector - gets first occurrence
+console.dir(document.querySelector("#bear-photo"));
+console.dir(document.querySelector("li.special"));
+console.dir(document.querySelector("ul").querySelector("li"));
+
+console.dir(document.querySelector("section ul li.special"));
+
+document.querySelectorAll("input");
+document.querySelectorAll("input[type=password]");
+
+const specials = document.querySelectorAll(".special");
+console.log(specials[0]);
+console.log(specials.length);
