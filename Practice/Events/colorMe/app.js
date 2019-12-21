@@ -15,3 +15,7 @@ for (let color of colors) {
     container.appendChild(curDiv);
 }
 
+document.body.addEventListener("keypress", function (e) {
+    console.log(e);
+});
+
