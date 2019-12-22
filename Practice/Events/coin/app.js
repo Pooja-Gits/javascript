@@ -10,8 +10,6 @@ function isTouching(a, b) {
 	);
 }
 
-
-
 window.addEventListener("keypress", function (e) {
 	const player = document.querySelector("#player");
 	const coin = document.querySelector("#coin");
@@ -33,10 +31,10 @@ window.addEventListener("keypress", function (e) {
 		this.console.log(newHeight);
 		this.console.log(newWidth);
 		switch (e.key.toUpperCase()) {
-			case "W": newHeight = `${newHeight - 10}px`; break;
-			case "D": newWidth = `${newWidth + 10}px`; break;
-			case "A": newWidth = `${newWidth - 10}px`; break;
-			case "S": newHeight = `${newHeight + 10}px`; break;
+			case "W": newHeight = `${newHeight - 5}px`; break;
+			case "D": newWidth = `${newWidth + 5}px`; break;
+			case "A": newWidth = `${newWidth - 5}px`; break;
+			case "S": newHeight = `${newHeight + 5}px`; break;
 		}
 		player.style.top = newHeight;
 		player.style.left = newWidth;
