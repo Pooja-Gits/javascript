@@ -10,20 +10,29 @@ function isTouching(a, b) {
 	);
 }
 
-window.addEventListener("keypress", function (e) {
-	const player = document.querySelector("#player");
-	const coin = document.querySelector("#coin");
+const player = document.querySelector("#player");
+const coin = document.querySelector("#coin");
+
+function moveCoin() {
 	let width = window.innerWidth;
 	let height = window.innerHeight;
-	if (isTouching(player, coin)) {
-		let newHeight = Math.floor(Math.random() * height);
-		let newWidth = Math.floor(Math.random() * width);
-		coin.style.top = `${newHeight}px`;
-		coin.style.left = `${newWidth}px`;
-		this.console.log(newHeight);
-		this.console.log(newWidth);
+	let newHeight = Math.floor(Math.random() * height);
+	let newWidth = Math.floor(Math.random() * width);
+	coin.style.top = `${newHeight}px`;
+	coin.style.left = `${newWidth}px`;
+	this.console.log(newHeight);
+	this.console.log(newWidth);
+	if (player.style.top === "") {
 		player.style.top = `${Math.floor(Math.random() * height)}px`;
 		player.style.left = `${Math.floor(Math.random() * width)}px`;
+	}
+}
+
+moveCoin();
+
+window.addEventListener("keyup", function (e) {
+	if (isTouching(player, coin)) {
+		moveCoin();
 	}
 	else {
 		let newHeight = parseInt(player.style.top);
@@ -31,10 +40,14 @@ window.addEventListener("keypress", function (e) {
 		this.console.log(newHeight);
 		this.console.log(newWidth);
 		switch (e.key.toUpperCase()) {
-			case "W": newHeight = `${newHeight - 5}px`; break;
-			case "D": newWidth = `${newWidth + 5}px`; break;
-			case "A": newWidth = `${newWidth - 5}px`; break;
-			case "S": newHeight = `${newHeight + 5}px`; break;
+			case "ARROWUP": newHeight = `${newHeight - 50}px`; break;
+			case "ARROWRIGHT":
+				player.style.transform = "scale(1,1)";
+				newWidth = `${newWidth + 50}px`; break;
+			case "ARROWLEFT":
+				player.style.transform = "scale(-1,1)";
+				newWidth = `${newWidth - 50}px`; break;
+			case "ARROWDOWN": newHeight = `${newHeight + 50}px`; break;
 		}
 		player.style.top = newHeight;
 		player.style.left = newWidth;
